@@ -1,0 +1,14 @@
+python main.py \
+	--output_dir results/adapter_medcpt_ppr \
+	--train_dataset datasets/ppr/ppr_train.jsonl \
+	--val_dataset datasets/ppr/ppr_dev.jsonl \
+	--pmid2info_path datasets/ppr/ppr_pmid2info.json \
+	--qid2info_path datasets/qid2info.json \
+	--bert_q_path BAAI/bge-m3 \
+	--bert_d_path BAAI/bge-m3 \
+	--tokenizer_path BAAI/bge-m3 \
+	--max_query_length 1024 \
+	--max_doc_length 1024 \
+	--adapter ppr \
+	--per_gpu_train_batch_size 8 \
+	--gradient_accumulation_steps 2

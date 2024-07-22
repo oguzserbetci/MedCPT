@@ -1,0 +1,14 @@
+python main.py \
+	--output_dir results/adapter_highbatch_medcpt_par \
+	--train_dataset datasets/par/par_train.jsonl \
+	--val_dataset datasets/par/par_dev.jsonl \
+	--pmid2info_path datasets/par/par_pmid2info.json \
+	--qid2info_path datasets/qid2info.json \
+	--bert_q_path ncbi/MedCPT-Article-Encoder \
+	--bert_d_path ncbi/MedCPT-Article-Encoder \
+	--tokenizer_path ncbi/MedCPT-Article-Encoder \
+	--max_query_length 512 \
+	--max_doc_length 512 \
+	--adapter par \
+	--per_gpu_train_batch_size 64 \
+	--gradient_accumulation_steps 2

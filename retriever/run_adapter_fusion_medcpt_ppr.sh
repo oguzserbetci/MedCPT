@@ -1,0 +1,15 @@
+python main.py \
+	--output_dir results/adapter_fusion_medcpt_ppr \
+	--train_dataset datasets/ppr/ppr_train.jsonl \
+	--val_dataset datasets/ppr/ppr_dev.jsonl \
+	--pmid2info_path datasets/ppr/ppr_pmid2info.json \
+	--qid2info_path datasets/qid2info.json \
+	--bert_q_path ncbi/MedCPT-Article-Encoder \
+	--bert_d_path ncbi/MedCPT-Article-Encoder \
+	--tokenizer_path ncbi/MedCPT-Article-Encoder \
+	--max_query_length 512 \
+	--max_doc_length 512 \
+	--adapter_paths results/adapter_highbatch_medcpt_ppr/checkpoint-2500/query_adapter_ppr  results/adapter_highbatch_medcpt_par/checkpoint-2500/query_adapter_par \
+	--fuse_adapter dynamic \
+	--per_gpu_train_batch_size 8 \
+	--gradient_accumulation_steps 2

@@ -1,0 +1,21 @@
+python main.py \
+  --name medcpt_par \
+  --corpus_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/PAR/corpus.jsonl \
+  --queries_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/queries/dev_queries.jsonl \
+  --qrels_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/PAR/qrels_dev.tsv \
+  --query_enc_path ncbi/MedCPT-Article-Encoder \
+  --doc_enc_path ncbi/MedCPT-Article-Encoder \
+  --max_query_length 512 \
+  --max_doc_length 512 \
+  --retriever_tokenizer_path ncbi/MedCPT-Article-Encoder
+python main.py \
+  --name adapter_medcpt_par \
+  --corpus_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/PAR/corpus.jsonl \
+  --queries_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/queries/dev_queries.jsonl \
+  --qrels_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/PAR/qrels_dev.tsv \
+  --query_enc_path ../retriever/results/adapter_medcpt_par/checkpoint-2500/query_encoder \
+  --doc_enc_path ../retriever/results/adapter_medcpt_par/checkpoint-2500/query_encoder \
+  --max_query_length 512 \
+  --max_doc_length 512 \
+  --retriever_tokenizer_path ncbi/MedCPT-Article-Encoder \
+  --adapter_paths ../retriever/results/adapter_medcpt_par/checkpoint-2500/adapter_par

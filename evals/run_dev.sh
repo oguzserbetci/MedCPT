@@ -1,0 +1,11 @@
+python main.py \
+  --name dev \
+  --corpus_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/PPR/corpus.jsonl \
+  --queries_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/queries/train_queries.jsonl \
+  --qrels_path /vol/tmp/wbi-datasets/PMC-Patients/ReCDS_benchmark/PPR/qrels_train.tsv \
+  --query_enc_path ncbi/MedCPT-Article-Encoder \
+  --doc_enc_path ncbi/MedCPT-Article-Encoder \
+  --cross_enc_path ncbi/MedCPT-Cross-Encoder \
+  --retriever_tokenizer_path ncbi/MedCPT-Article-Encoder \
+  --reranking \
+  --dev
